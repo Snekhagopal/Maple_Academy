@@ -49,7 +49,7 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
+  /* --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -80,7 +80,57 @@
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-ring: oklch(0.708 0 0); */
+
+--background: oklch(0.96 0.02 85);
+  --foreground: oklch(0.15 0.01 0);
+
+  --card: oklch(0.98 0.015 85);
+  --card-foreground: oklch(0.15 0.01 0);
+
+  --popover: oklch(0.98 0.015 85);
+  --popover-foreground: oklch(0.15 0.01 0);
+
+  --primary: oklch(0.55 0.22 25);
+  --primary-foreground: oklch(1 0 0);
+
+  --secondary: oklch(0.18 0.01 0);
+  --secondary-foreground: oklch(0.96 0.02 85);
+
+  --muted: oklch(0.93 0.02 80);
+  --muted-foreground: oklch(0.45 0.02 0);
+
+  --accent: oklch(0.55 0.22 25);
+  --accent-foreground: oklch(1 0 0);
+
+  --destructive: oklch(0.62 0.25 25);
+  --destructive-foreground: oklch(1 0 0);
+
+  --border: oklch(0.88 0.02 75);
+  --input: oklch(0.88 0.02 75);
+  --ring: oklch(0.55 0.22 25);
+
+  --radius: 0.875rem;
+
+  --red-glow: oklch(0.55 0.22 25);
+  --yellow-dim: oklch(0.75 0.18 95);
+  --course-detail-bg: oklch(0.22 0.03 260);
+
+  --surface-2: oklch(0.95 0.02 85);
+  --surface-3: oklch(0.93 0.02 80);
+  --surface-4: oklch(0.90 0.02 75);
+
+  --sidebar-background: oklch(0.97 0.02 85);
+  --sidebar-foreground: oklch(0.20 0.01 0);
+
+  --sidebar-primary: oklch(0.55 0.22 25);
+  --sidebar-primary-foreground: oklch(1 0 0);
+
+  --sidebar-accent: oklch(0.93 0.02 80);
+  --sidebar-accent-foreground: oklch(0.18 0.01 0);
+
+  --sidebar-border: oklch(0.88 0.02 75);
+  --sidebar-ring: oklch(0.55 0.22 25);
 }
 
 .dark {
@@ -127,4 +177,53 @@
   html {
     @apply font-sans;
   }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  .font-heading {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 3px;
 }
