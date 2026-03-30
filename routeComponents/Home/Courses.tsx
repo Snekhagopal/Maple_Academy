@@ -10,7 +10,7 @@ import courseWesternVocals from "@/assets/course-western-vocals.jpg";
 import courseCarnaticVocals from "@/assets/course-carnatic-vocals.jpg";
 import courseMusicTheory from "@/assets/course-music-theory.jpg";
 import courseVocalTraining from "@/assets/course-vocal-training.jpg";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 const levels = ["Foundation", "Beginner", "Intermediate", "Advanced"] as const;
 type Level = typeof levels[number];
@@ -22,7 +22,7 @@ interface LevelContent {
 
 interface Course {
   name: string;
-  image: string;
+  image: string | StaticImageData;
   badge?: string;
   description: string;
   levels: Record<Level, LevelContent>;
