@@ -11,7 +11,7 @@ const Hero = ({ onOpenDemo }: HeroProps) => {
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background image - full display */}
       <div className="absolute inset-0">
-        <Image src={heroBg} alt="" className="w-full h-full object-contain object-center bg-[#080A0F]" />
+        <Image src={heroBg} alt="" className="w-full h-full object-cover object-center bg-[#080A0F]" />
       </div>
       {/* Dark overlay with less transparency */}
       <div className="absolute inset-0 bg-linear-to-r from-[#080A0F]/90 via-[#080A0F]/75 to-[#080A0F]/50" />
