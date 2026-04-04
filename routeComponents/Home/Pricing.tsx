@@ -1,28 +1,31 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const PRICING: Record<string, { sym: string; code: string; name: string; price: number }> = {
-  IN: { sym: "₹", code: "INR", name: "India", price: 1500 },
-  US: { sym: "$", code: "USD", name: "United States", price: 25 },
-  UK: { sym: "£", code: "GBP", name: "United Kingdom", price: 22 },
-  AU: { sym: "A$", code: "AUD", name: "Australia", price: 40 },
-  AE: { sym: "AED", code: "AED", name: "UAE", price: 100 },
-  SG: { sym: "S$", code: "SGD", name: "Singapore", price: 38 },
-  CA: { sym: "C$", code: "CAD", name: "Canada", price: 35 },
-  MY: { sym: "RM", code: "MYR", name: "Malaysia", price: 120 },
-  EU: { sym: "€", code: "EUR", name: "Europe", price: 24 },
+const PRICING: Record<
+  string,
+  { sym: string; code: string; name: string; price: number }
+> = {
+  IN: { sym: "₹", code: "INR", name: "India", price: 500 },
+  US: { sym: "$", code: "USD", name: "United States", price: 10.5 },
+  UK: { sym: "£", code: "GBP", name: "United Kingdom", price: 8.5 },
+  AU: { sym: "A$", code: "AUD", name: "Australia", price: 15.5 },
+  AE: { sym: "AED", code: "AED", name: "UAE", price: 38 },
+  SG: { sym: "S$", code: "SGD", name: "Singapore", price: 14 },
+  CA: { sym: "C$", code: "CAD", name: "Canada", price: 15 },
+  MY: { sym: "RM", code: "MYR", name: "Malaysia", price: 43 },
+  EU: { sym: "€", code: "EUR", name: "Europe", price: 9.5 },
 };
 
 const REGIONS = [
   { code: "IN", flag: "🇮🇳", label: "India" },
   { code: "US", flag: "🇺🇸", label: "USA" },
   { code: "UK", flag: "🇬🇧", label: "UK" },
+  { code: "EU", flag: "🇪🇺", label: "Europe" },
   { code: "AU", flag: "🇦🇺", label: "Australia" },
   { code: "AE", flag: "🇦🇪", label: "UAE" },
   { code: "SG", flag: "🇸🇬", label: "Singapore" },
   { code: "CA", flag: "🇨🇦", label: "Canada" },
   { code: "MY", flag: "🇲🇾", label: "Malaysia" },
-  { code: "EU", flag: "🇪🇺", label: "Europe" },
 ];
 
 const COURSES = [
@@ -54,7 +57,8 @@ const Pricing = ({ onOpenDemo }: PricingProps) => {
           Simple, <span className="text-primary">Clear</span> Fees
         </h2>
         <p className="text-muted-foreground text-[.95rem] leading-[1.75] font-light max-w-[560px] mx-auto">
-          Select your region to see monthly fees in your local currency. No hidden charges, ever.
+          Select your region to see monthly fees in your local currency. No
+          hidden charges, ever.
         </p>
       </div>
 
@@ -80,7 +84,9 @@ const Pricing = ({ onOpenDemo }: PricingProps) => {
         <div className="text-center py-14">
           <div className="text-[2.8rem] mb-3.5">🌍</div>
           <p className="text-muted-foreground text-[.9rem] leading-[1.7]">
-            Select your country above<br />to see fees in your local currency.
+            Select your country above
+            <br />
+            to see fees in your local currency.
           </p>
         </div>
       ) : (
@@ -96,7 +102,9 @@ const Pricing = ({ onOpenDemo }: PricingProps) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
                 className={`bg-card border rounded-lg p-7 relative transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl ${
-                  course.featured ? "border-primary/30 ring-1 ring-primary/10" : "border-border"
+                  course.featured
+                    ? "border-primary/30 ring-1 ring-primary/10"
+                    : "border-border"
                 }`}
               >
                 {course.featured && (
@@ -108,18 +116,37 @@ const Pricing = ({ onOpenDemo }: PricingProps) => {
                   </>
                 )}
                 <div className="text-[2rem] mb-3">{course.icon}</div>
-                <div className="text-[.68rem] font-bold tracking-[.1em] uppercase text-muted-foreground mb-1.5">{course.tag}</div>
-                <div className="font-heading text-lg font-black mb-4 text-foreground">{course.name}</div>
+                <div className="text-[.68rem] font-bold tracking-[.1em] uppercase text-muted-foreground mb-1.5">
+                  {course.tag}
+                </div>
+                <div className="font-heading text-lg font-black mb-4 text-foreground">
+                  {course.name}
+                </div>
                 <div className="flex items-baseline gap-1 mb-1.5">
-                  <span className="text-[1.1rem] text-primary font-bold mt-1">{data.sym}</span>
-                  <span className="font-display text-[3rem] text-foreground leading-none">{data.price}</span>
-                  <span className="text-[.78rem] text-muted-foreground self-end pb-1">/ month</span>
+                  <span className="text-[1.1rem] text-primary font-bold mt-1">
+                    {data.sym}
+                  </span>
+                  <span className="font-display text-[3rem] text-foreground leading-none">
+                    {data.price}
+                  </span>
+                  <span className="text-[.78rem] text-muted-foreground self-end pb-1">
+                    / session
+                  </span>
                 </div>
                 <hr className="border-border my-4" />
                 <ul className="mb-6 flex flex-col gap-2">
-                  {["4 live classes per month", "One-on-one sessions", "Practice resources", "WhatsApp support"].map((f) => (
-                    <li key={f} className="text-[.84rem] text-muted-foreground flex items-center gap-2">
-                      <span className="text-primary text-[.8rem]">✓</span>{f}
+                  {[
+                    "2 live classes per Week",
+                    "One-on-one sessions",
+                    "Practice resources",
+                    "WhatsApp support",
+                  ].map((f) => (
+                    <li
+                      key={f}
+                      className="text-[.84rem] text-muted-foreground flex items-center gap-2"
+                    >
+                      <span className="text-primary text-[.8rem]">✓</span>
+                      {f}
                     </li>
                   ))}
                 </ul>
