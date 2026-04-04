@@ -22,8 +22,8 @@ export default function Home() {
       <Hero onOpenDemo={openDemo} />
       <StatsBar />
       <Marquee />
-      <Courses onOpenDemo={openDemo} />
       <About />
+      <Courses onOpenDemo={openDemo} />
       <GradedExams />
       <Pricing onOpenDemo={openDemo} />
       <WhyUs onOpenDemo={openDemo} />
