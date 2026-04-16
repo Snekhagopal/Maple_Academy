@@ -31,7 +31,7 @@ interface Course {
 
 const courses: Course[] = [
   {
-    name: "Keyboard",
+    name: "Electric Keyboard",
     image: courseKeyboard,
     badge: "Popular",
     description:
@@ -44,7 +44,8 @@ const courses: Course[] = [
           " Reading sheet music - Treble & bass clef",
           "Playing simple songs with both hands",
           "Introduction to chords and scales",
-          "Grade exams: Debut - Level 3",
+          "Grade exams: Level 0 - 3",
+          
         ],
       },
       Intermediate: {
@@ -205,7 +206,7 @@ const courses: Course[] = [
       { icon: "calendar", label: "2 Classes / Week" },
       { icon: "music", label: "Rock, Blues and Metal" },
       { icon: "book", label: "Genre Specific Training" },
-      { icon: "book-open", label: "Theory Integrated Learning" },
+      { icon: "book-open", label: "Grade exam preparation" },
     ],
   },
   {
@@ -217,11 +218,11 @@ const courses: Course[] = [
       Beginner: {
         title: "Beginner",
         points: [
-          "Breath support & control techniques",
+          "Breathing and pitch basics",
           "Vocal warm-ups & cool-downs",
           "Major scale singing & intervals",
-          "Diction & vowel shaping",
-          "Singing pop & folk songs",
+          "Singing simple pop & folk songs",
+          "Grade Exams: Level 0–3",
         ],
       },
       Intermediate: {
@@ -229,27 +230,27 @@ const courses: Course[] = [
         points: [
           "Vocal range expansion exercises",
           "Runs, riffs & vocal agility",
-          "Singing in different styles — pop, rock, jazz",
-          "Microphone technique",
+          "Singing in different styles — Pop, Rock, Jazz & Country",
           "Harmonies & backing vocals",
+          "Grade Exams: Level 4–5",
         ],
       },
       Advanced: {
         title: "Advanced",
         points: [
           "Advanced vocal interpretation & dynamics",
-          "Stage performance & audience engagement",
           "Audition & competition preparation",
-          "Studio recording techniques",
           "Building a performance repertoire",
+          "Studio recording techniques",
+          "Grade Exams: Level 6–8",
         ],
       },
     },
     highlights: [
-      { icon: "calendar", label: "4 Live Classes / Month" },
+      { icon: "calendar", label: "2 Live Classes / Week" },
       { icon: "music", label: "Pop, Rock & Jazz Styles" },
       { icon: "book", label: "Technique-Focused Training" },
-      { icon: "award", label: "Performance Coaching" },
+      { icon: "award", label: "Grade Exam Preparation" },
     ],
   },
   {
@@ -306,39 +307,39 @@ const courses: Course[] = [
       Beginner: {
         title: "Beginner",
         points: [
-          "Major & minor scales construction",
-          "Key signatures & circle of fifths",
-          "Intervals — identification & ear training",
-          "Chord construction — triads",
-          "Simple rhythm dictation",
+          "Notes, staff & basic notation",
+          "Scales, intervals & simple chords",
+          "Rhythm, time signatures & rests",
+          "Sight reading & aural basics",
+          "Grade Exams: Level 0–3",
         ],
       },
       Intermediate: {
         title: "Intermediate",
         points: [
-          "7th chords & extended harmony",
-          "Chord progressions & Roman numeral analysis",
+          "Major / minor scales & key signatures",
+          "Chord progressions & inversions",
+          "Complex rhythms & syncopation",
           "Modulation & key changes",
-          "Musical forms — binary, ternary, rondo",
-          "Transposition & score reading",
+          "Grade Exams: Level 4–5",
         ],
       },
       Advanced: {
         title: "Advanced",
         points: [
-          "Counterpoint & voice leading rules",
           "Orchestration & arranging basics",
-          "Advanced harmony — chromatic & modal",
+          "Advanced harmony & chord functions",
           "Composition techniques",
-          "ABRSM / Trinity theory exam prep",
+          "Advanced aural & score reading",
+          "Grade Exams: Level 6–8",
         ],
       },
     },
     highlights: [
-      { icon: "calendar", label: "4 Live Classes / Month" },
+      { icon: "calendar", label: "2 Live Classes / Week" },
       { icon: "music", label: "Comprehensive Curriculum" },
       { icon: "book", label: "Theory & Practical Balance" },
-      { icon: "award", label: "ABRSM / Trinity Prep" },
+      { icon: "award", label: "Grade Exam Preparation" },
     ],
   },
   {
@@ -380,7 +381,7 @@ const courses: Course[] = [
       },
     },
     highlights: [
-      { icon: "calendar", label: "4 Live Classes / Month" },
+      { icon: "calendar", label: "2 Live Classes / Week" },
       { icon: "music", label: "All Vocal Styles" },
       { icon: "book", label: "Technique-Focused" },
       { icon: "award", label: "Stage Confidence Building" },
