@@ -4,7 +4,6 @@ import logo from "@/assets/logo.jpg";
 import bridgeLogo from "@/assets/bridge-academy.svg";
 import Image from "next/image";
 
-
 const exams = [
   {
     name: "Rock School",
@@ -12,7 +11,7 @@ const exams = [
     bg: "bg-gradient-to-r from-[#0077B6] to-[#00B4D8]",
     label: "RSL",
     labelStyle: "text-white font-display text-3xl tracking-wider",
-    path:"https://www.trinitycollege.com/",
+    path: "https://www.rslawards.com/ ",
   },
   {
     name: "Trinity College",
@@ -20,14 +19,14 @@ const exams = [
     bg: "bg-gradient-to-r from-[#6A0DAD] to-[#9B59B6]",
     label: "TRINITY",
     labelStyle: "text-white font-display text-2xl tracking-[.15em]",
-    path:"https://www.rslawards.com/ ",
+    path: "https://www.trinitycollege.com/",
   },
   {
     name: "Maple Diary Academy",
     location: "India",
     bg: "bg-gradient-to-r from-[#C8102E] to-[#9e0c24]",
     logo: logo,
-    path:"#",
+    path: "#",
     isLogo: true,
   },
   {
@@ -35,7 +34,7 @@ const exams = [
     location: "",
     bg: "bg-gradient-to-r from-[#1a3a5c] to-[#2c5f8a]",
     logo: bridgeLogo,
-    path:"https://bridgeacademy.in/fine-arts/",
+    path: "https://bridgeacademy.in/fine-arts/",
     isLogo: true,
   },
 ];
@@ -63,7 +62,9 @@ const GradedExams = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1 }}
-            href={exam.path} target="_blank" rel="noopener noreferrer"
+            href={exam.path}
+            target="_blank"
+            rel="noopener noreferrer"
             // onClick={() => window.open(exam.path, "_blank")}
             className={`${exam.bg} rounded-2xl p-6 flex items-center justify-between gap-4 min-h-30 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}
           >

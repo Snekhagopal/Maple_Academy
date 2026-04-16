@@ -1,6 +1,9 @@
 import logo from "@/assets/logo.jpg";
 import { Mail, MessageCircle } from "lucide-react";
+
 import Image from "next/image";
+import instagram from "@/assets/instagram.png";
+import youtube from "@/assets/youtube.png";
 
 interface FooterProps {
   onOpenDemo: () => void;
@@ -32,13 +35,13 @@ const Footer = ({ onOpenDemo }: FooterProps) => (
         <div className="flex gap-2">
           {[
             {
-              icon: <Mail className="w-4 h-4" />,
-              title: "Email",
+              icon: instagram,
+              title: "instagram",
               href: "mailto:saicharan652@gmail.com",
             },
             {
-              icon: <MessageCircle className="w-4 h-4" />,
-              title: "WhatsApp",
+              icon: youtube,
+              title: "youtube",
               href: "https://wa.me/",
             },
           ].map((s) => (
@@ -50,7 +53,13 @@ const Footer = ({ onOpenDemo }: FooterProps) => (
               title={s.title}
               className="w-8.5 h-8.5 rounded-lg bg-secondary-foreground/10 border border-secondary-foreground/10 flex items-center justify-center text-secondary-foreground/60 transition-all hover:border-primary hover:bg-primary/20 hover:text-primary"
             >
-              {s.icon}
+              <Image
+                src={s.icon}
+                alt={s.title}
+                width={16}
+                height={16}
+                className="object-contain"
+              />
             </a>
           ))}
         </div>

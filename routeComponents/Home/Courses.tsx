@@ -292,7 +292,7 @@ const courses: Course[] = [
       },
     },
     highlights: [
-      { icon: "calendar", label: "4 Live Classes / Month" },
+      { icon: "calendar", label: "2 Live Classes / Week" },
       { icon: "music", label: "Traditional Methodology" },
       { icon: "book", label: "Raaga & Taala System" },
       { icon: "award", label: "Grade Exam Preparation" },
