@@ -1,9 +1,9 @@
 const stats = [
   { num: "500+", label: "Happy Students" },
-  { num: "8", label: "Courses Offered" },
+  { num: "10+", label: "Courses Offered" },
   { num: "100%", label: "Live Classes" },
   { num: "5★", label: "Rated by Parents" },
-  { num: "4+", label: "Countries Served" },
+  { num: "10+", label: "Countries Served" },
 ];
 
 

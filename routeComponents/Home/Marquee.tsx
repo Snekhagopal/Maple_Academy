@@ -1,7 +1,14 @@
 const items = [
-  "Keyboard Classes", "Piano Lessons", "Guitar Lessons", "Vocal Training",
-  "Live Online Sessions", "Certified Teachers", "Flexible Timings",
-  "Free Demo Session", "All Age Groups", "WhatsApp Support",
+  "Electronic Keyboard",
+  "Piano Lessons",
+  "Guitar Lessons",
+  "Vocal Training",
+  "Live Online Sessions",
+  "Certified Teachers",
+  "Flexible Timings",
+  "Free Demo Session",
+  "All Age Groups",
+  "WhatsApp Support",
 ];
 
 const Marquee = () => (

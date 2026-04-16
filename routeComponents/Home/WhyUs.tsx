@@ -6,7 +6,7 @@ interface WhyUsProps {
 
 const features = [
   { icon: "👨‍🏫", title: "Expert Teachers", desc: "Trained, passionate instructors with years of performance and teaching experience." },
-  { icon: "📅", title: "Flexible Timings", desc: "Morning, evening or weekend slots. Reschedule anytime with 24 hours notice." },
+  { icon: "📅", title: "Flexible Timings", desc: "Morning, evening or weekend slots. Reschedule anytime with  atleast 6  hours notice." },
   { icon: "🎯", title: "Personalised Curriculum", desc: "Every student gets a custom plan built around their goals, style and pace." },
   { icon: "💻", title: "100% Live Classes", desc: "No recordings. Every session is live via Zoom or Google Meet with real-time feedback." },
   { icon: "📱", title: "WhatsApp Support", desc: "Stay connected with your teacher, track progress and manage scheduling via WhatsApp." },

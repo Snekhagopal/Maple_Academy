@@ -29,7 +29,7 @@ const REGIONS = [
 ];
 
 const COURSES = [
-  { name: "Keyboard", icon: "🎹", tag: "Popular" },
+  { name: "Electronic Keyboard", icon: "🎹", tag: "Popular" },
   { name: "Piano", icon: "🎹", tag: "Classical" },
   { name: "Acoustic Guitar", icon: "🎸", tag: "Best Value", featured: true },
   { name: "Electric Guitar", icon: "🎸", tag: "Rock" },
@@ -51,14 +51,14 @@ const Pricing = ({ onOpenDemo }: PricingProps) => {
     <section id="pricing" className="py-24 px-[5%] bg-background">
       <div className="text-center mb-11">
         <span className="inline-block text-[.68rem] font-bold tracking-[.12em] uppercase text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full mb-3">
-          Transparent Pricing
+          Pricing
         </span>
         <h2 className="font-heading text-[clamp(1.9rem,4vw,3rem)] font-black leading-tight text-foreground mb-4">
           Simple, <span className="text-primary">Clear</span> Fees
         </h2>
-        <p className="text-muted-foreground text-[.95rem] leading-[1.75] font-light max-w-[560px] mx-auto">
-          Select your region to see monthly fees in your local currency. No
-          hidden charges, ever.
+        <p className="text-muted-foreground text-[.95rem] leading-[1.75] font-light max-w-140 mx-auto">
+          Select your region to see fees in your local currency. No hidden
+          charges, ever.
         </p>
       </div>
 
@@ -136,10 +136,10 @@ const Pricing = ({ onOpenDemo }: PricingProps) => {
                 <hr className="border-border my-4" />
                 <ul className="mb-6 flex flex-col gap-2">
                   {[
-                    "2 live classes per Week",
-                    "One-on-one sessions",
-                    "Practice resources",
-                    "WhatsApp support",
+                    "30 minutes session",
+                    "2 live classes per week",
+                    "One on one Sessions",
+                    "Practice Resources",
                   ].map((f) => (
                     <li
                       key={f}
