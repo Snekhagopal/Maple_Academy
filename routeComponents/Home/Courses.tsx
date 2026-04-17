@@ -31,7 +31,7 @@ interface Course {
 
 const courses: Course[] = [
   {
-    name: "Electric Keyboard",
+    name: "Electronic Keyboard",
     image: courseKeyboard,
     badge: "Popular",
     description:

@@ -1,5 +1,5 @@
 const items = [
-  "Electronic Keyboard",
+  "Electronic Keyboard Lessons",
   "Piano Lessons",
   "Guitar Lessons",
   "Vocal Training",
