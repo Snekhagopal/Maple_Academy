@@ -70,7 +70,7 @@ const Footer = ({ onOpenDemo }: FooterProps) => (
         </h5>
         <ul className="space-y-2.5">
           {[
-            "Keyboard",
+            "Electronic Keyboard",
             "Piano",
             "Acoustic Guitar",
             "Electric Guitar",
