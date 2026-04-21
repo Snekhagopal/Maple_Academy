@@ -10,6 +10,7 @@ import Hero from "@/routeComponents/Home/Hero";
 import Marquee from "@/routeComponents/Home/Marquee";
 import Pricing from "@/routeComponents/Home/Pricing";
 import StatsBar from "@/routeComponents/Home/StatsBar";
+import Testimonials from "@/routeComponents/Home/Testimonials";
 import WhyUs from "@/routeComponents/Home/WhyUs";
 import { useState } from "react";
 
@@ -27,6 +28,7 @@ export default function Home() {
       <GradedExams />
       <Pricing onOpenDemo={openDemo} />
       <WhyUs onOpenDemo={openDemo} />
+      <Testimonials/>
       <FAQ />
       <Footer onOpenDemo={openDemo} />
       {/* Floating WhatsApp */}
