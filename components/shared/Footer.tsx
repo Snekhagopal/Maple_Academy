@@ -37,12 +37,12 @@ const Footer = ({ onOpenDemo }: FooterProps) => (
             {
               icon: instagram,
               title: "instagram",
-              href: "mailto:saicharan652@gmail.com",
+              href: "https://www.instagram.com/maplediaryacademy?igsh=MTVjYWM3cXpsd3duYw==",
             },
             {
               icon: youtube,
               title: "youtube",
-              href: "https://wa.me/",
+              href: "https://wa.me/9043872168",
             },
           ].map((s) => (
             <a
@@ -123,7 +123,7 @@ const Footer = ({ onOpenDemo }: FooterProps) => (
         <ul className="space-y-2.5">
           <li>
             <a
-              href="https://wa.me/"
+              href="https://wa.me/9043872168"
               className="text-[.84rem] text-secondary-foreground/50 hover:text-secondary-foreground transition-colors flex items-center gap-2"
             >
               <MessageCircle className="w-3.5 h-3.5" /> WhatsApp
@@ -131,7 +131,9 @@ const Footer = ({ onOpenDemo }: FooterProps) => (
           </li>
           <li>
             <a
-              href="mailto:saicharan652@gmail.com"
+              // href="themaplediary@gmail.com"
+              href="mailto:themaplediary@gmail.com?subject=Hello&body=I%20want%20to%20connect"
+              // target="_blank"
               className="text-[.84rem] text-secondary-foreground/50 hover:text-secondary-foreground transition-colors flex items-center gap-2"
             >
               <Mail className="w-3.5 h-3.5" /> Email Us
