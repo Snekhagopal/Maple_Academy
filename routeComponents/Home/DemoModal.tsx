@@ -1,19 +1,28 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-// ✅ Replace these with your actual EmailJS credentials
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
-
 const COURSES = [
-  "Keyboard", "Piano", "Acoustic Guitar", "Electric Guitar",
-  "Western Vocals", "Carnatic Vocals", "Music Theory", "Vocal Training",
+  "Keyboard",
+  "Piano",
+  "Acoustic Guitar",
+  "Electric Guitar",
+  "Western Vocals",
+  "Carnatic Vocals",
+  "Music Theory",
+  "Vocal Training",
 ];
 
 const COUNTRIES = [
-  "India", "United States", "United Kingdom", "Australia",
-  "UAE", "Singapore", "Canada", "Germany", "Malaysia", "Other",
+  "India",
+  "United States",
+  "United Kingdom",
+  "Australia",
+  "UAE",
+  "Singapore",
+  "Canada",
+  "Germany",
+  "Malaysia",
+  "Other",
 ];
 
 interface DemoModalProps {
@@ -27,8 +36,15 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
   const [submitError, setSubmitError] = useState("");
 
   const [form, setForm] = useState({
-    name: "", email: "", gender: "", country: "",
-    age: "", parentName: "", attendedBefore: "", course: "", phone: "",
+    name: "",
+    email: "",
+    gender: "",
+    country: "",
+    age: "",
+    parentName: "",
+    attendedBefore: "",
+    course: "",
+    phone: "",
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -55,8 +71,8 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
 
     try {
       await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
           from_name: form.name,
           from_email: form.email,
@@ -68,13 +84,15 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
           attended_before: form.attendedBefore,
           course: form.course,
         },
-        EMAILJS_PUBLIC_KEY
+            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       );
 
       setSuccess(true);
     } catch (err) {
       console.error("EmailJS error:", err);
-      setSubmitError("Something went wrong. Please try again or contact us directly.");
+      setSubmitError(
+        "Something went wrong. Please try again or contact us directly.",
+      );
     } finally {
       setLoading(false);
     }
@@ -86,8 +104,15 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
       setSuccess(false);
       setSubmitError("");
       setForm({
-        name: "", email: "", gender: "", age: "", country: "",
-        parentName: "", attendedBefore: "", course: "", phone: "",
+        name: "",
+        email: "",
+        gender: "",
+        age: "",
+        country: "",
+        parentName: "",
+        attendedBefore: "",
+        course: "",
+        phone: "",
       });
       setErrors({});
     }, 300);
@@ -125,24 +150,43 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
                 Book Your Free Demo
               </h2>
               <p className="text-[.87rem] text-muted-foreground leading-[1.65] mb-6">
-                Fill in your details below. We&apos;ll WhatsApp you within 24 hours to confirm your free trial class!
+                Fill in your details below. We&apos;ll WhatsApp you within 24
+                hours to confirm your free trial class!
               </p>
 
               {/* Name & Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-4">
                 <div>
                   <label className={labelClass}>Name *</label>
-                  <input type="text" value={form.name}
+                  <input
+                    type="text"
+                    value={form.name}
                     onChange={(e) => setForm({ ...form, name: e.target.value })}
-                    placeholder="Enter your name" className={inputClass} />
-                  {errors.name && <span className="text-primary text-[.75rem] mt-1 block">{errors.name}</span>}
+                    placeholder="Enter your name"
+                    className={inputClass}
+                  />
+                  {errors.name && (
+                    <span className="text-primary text-[.75rem] mt-1 block">
+                      {errors.name}
+                    </span>
+                  )}
                 </div>
                 <div>
                   <label className={labelClass}>Email ID *</label>
-                  <input type="email" value={form.email}
-                    onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    placeholder="Enter your email" className={inputClass} />
-                  {errors.email && <span className="text-primary text-[.75rem] mt-1 block">{errors.email}</span>}
+                  <input
+                    type="email"
+                    value={form.email}
+                    onChange={(e) =>
+                      setForm({ ...form, email: e.target.value })
+                    }
+                    placeholder="Enter your email"
+                    className={inputClass}
+                  />
+                  {errors.email && (
+                    <span className="text-primary text-[.75rem] mt-1 block">
+                      {errors.email}
+                    </span>
+                  )}
                 </div>
               </div>
 
@@ -150,21 +194,33 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-4">
                 <div>
                   <label className={labelClass}>Gender *</label>
-                  <select value={form.gender}
-                    onChange={(e) => setForm({ ...form, gender: e.target.value })}
-                    className={selectClass}>
+                  <select
+                    value={form.gender}
+                    onChange={(e) =>
+                      setForm({ ...form, gender: e.target.value })
+                    }
+                    className={selectClass}
+                  >
                     <option value="">Select gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Other">Other</option>
                   </select>
-                  {errors.gender && <span className="text-primary text-[.75rem] mt-1 block">{errors.gender}</span>}
+                  {errors.gender && (
+                    <span className="text-primary text-[.75rem] mt-1 block">
+                      {errors.gender}
+                    </span>
+                  )}
                 </div>
                 <div>
                   <label className={labelClass}>Age *</label>
-                  <input type="text" value={form.age}
+                  <input
+                    type="text"
+                    value={form.age}
                     onChange={(e) => setForm({ ...form, age: e.target.value })}
-                    placeholder="Enter your age" className={inputClass} />
+                    placeholder="Enter your age"
+                    className={inputClass}
+                  />
                 </div>
               </div>
 
@@ -172,63 +228,114 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-4">
                 <div>
                   <label className={labelClass}>Parent Name *</label>
-                  <input type="text" value={form.parentName}
-                    onChange={(e) => setForm({ ...form, parentName: e.target.value })}
-                    placeholder="Enter parent's name" className={inputClass} />
-                  {errors.parentName && <span className="text-primary text-[.75rem] mt-1 block">{errors.parentName}</span>}
+                  <input
+                    type="text"
+                    value={form.parentName}
+                    onChange={(e) =>
+                      setForm({ ...form, parentName: e.target.value })
+                    }
+                    placeholder="Enter parent's name"
+                    className={inputClass}
+                  />
+                  {errors.parentName && (
+                    <span className="text-primary text-[.75rem] mt-1 block">
+                      {errors.parentName}
+                    </span>
+                  )}
                 </div>
                 <div>
                   <label className={labelClass}>Country *</label>
-                  <select value={form.country}
-                    onChange={(e) => setForm({ ...form, country: e.target.value })}
-                    className={selectClass}>
+                  <select
+                    value={form.country}
+                    onChange={(e) =>
+                      setForm({ ...form, country: e.target.value })
+                    }
+                    className={selectClass}
+                  >
                     <option value="">Select country</option>
-                    {COUNTRIES.map((c) => <option key={c} value={c}>{c}</option>)}
+                    {COUNTRIES.map((c) => (
+                      <option key={c} value={c}>
+                        {c}
+                      </option>
+                    ))}
                   </select>
-                  {errors.country && <span className="text-primary text-[.75rem] mt-1 block">{errors.country}</span>}
+                  {errors.country && (
+                    <span className="text-primary text-[.75rem] mt-1 block">
+                      {errors.country}
+                    </span>
+                  )}
                 </div>
               </div>
 
               {/* Phone */}
               <div className="mb-4">
                 <label className={labelClass}>Phone Number *</label>
-                <input type="tel" value={form.phone}
+                <input
+                  type="tel"
+                  value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                  placeholder="Enter your phone number" className={inputClass} />
+                  placeholder="Enter your phone number"
+                  className={inputClass}
+                />
               </div>
 
               {/* Attended Before */}
               <div className="mb-4">
-                <label className={labelClass}>Has student attended any class before? *</label>
-                <select value={form.attendedBefore}
-                  onChange={(e) => setForm({ ...form, attendedBefore: e.target.value })}
-                  className={selectClass}>
+                <label className={labelClass}>
+                  Has student attended any class before? *
+                </label>
+                <select
+                  value={form.attendedBefore}
+                  onChange={(e) =>
+                    setForm({ ...form, attendedBefore: e.target.value })
+                  }
+                  className={selectClass}
+                >
                   <option value="">Select option</option>
                   <option value="Yes">Yes</option>
                   <option value="No">No</option>
                 </select>
-                {errors.attendedBefore && <span className="text-primary text-[.75rem] mt-1 block">{errors.attendedBefore}</span>}
+                {errors.attendedBefore && (
+                  <span className="text-primary text-[.75rem] mt-1 block">
+                    {errors.attendedBefore}
+                  </span>
+                )}
               </div>
 
               {/* Course */}
               <div className="mb-4">
                 <label className={labelClass}>Select a Course *</label>
-                <select value={form.course}
+                <select
+                  value={form.course}
                   onChange={(e) => setForm({ ...form, course: e.target.value })}
-                  className={selectClass}>
+                  className={selectClass}
+                >
                   <option value="">Select a course</option>
-                  {COURSES.map((c) => <option key={c} value={c}>{c}</option>)}
+                  {COURSES.map((c) => (
+                    <option key={c} value={c}>
+                      {c}
+                    </option>
+                  ))}
                 </select>
-                {errors.course && <span className="text-primary text-[.75rem] mt-1 block">{errors.course}</span>}
+                {errors.course && (
+                  <span className="text-primary text-[.75rem] mt-1 block">
+                    {errors.course}
+                  </span>
+                )}
               </div>
 
               {/* Global error */}
               {submitError && (
-                <p className="text-primary text-[.82rem] mb-3 text-center">{submitError}</p>
+                <p className="text-primary text-[.82rem] mb-3 text-center">
+                  {submitError}
+                </p>
               )}
 
-              <button onClick={handleSubmit} disabled={loading}
-                className="w-full bg-primary text-primary-foreground py-3.5 rounded-lg text-[.98rem] font-bold tracking-[.04em] cursor-pointer flex items-center justify-center gap-2.5 transition-all shadow-[0_4px_20px_hsl(var(--red-glow)/0.2)] hover:brightness-90 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0 mt-1">
+              <button
+                onClick={handleSubmit}
+                disabled={loading}
+                className="w-full bg-primary text-primary-foreground py-3.5 rounded-lg text-[.98rem] font-bold tracking-[.04em] cursor-pointer flex items-center justify-center gap-2.5 transition-all shadow-[0_4px_20px_hsl(var(--red-glow)/0.2)] hover:brightness-90 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0 mt-1"
+              >
                 {loading ? "Sending..." : "📋 Register for Free Demo"}
               </button>
 
@@ -241,15 +348,22 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
           ) : (
             <div className="text-center py-4">
               <div className="text-[3.5rem] mb-3.5">🎉</div>
-              <h3 className="font-heading text-[1.55rem] mb-2.5 text-foreground">You&apos;re All Set!</h3>
+              <h3 className="font-heading text-[1.55rem] mb-2.5 text-foreground">
+                You&apos;re All Set!
+              </h3>
               <p className="text-muted-foreground text-[.88rem] leading-[1.7] mb-6">
                 Thank you! We&apos;ve received your details and will{" "}
-                <strong className="text-foreground">WhatsApp you within 24 hours</strong>{" "}
+                <strong className="text-foreground">
+                  WhatsApp you within 24 hours
+                </strong>{" "}
                 to confirm your free demo class slot.
               </p>
-              <a href="https://wa.me/?text=Hi%20Maple%20Diary%20Academy!%20I%20just%20booked%20a%20free%20demo."
-                target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-green-600 text-primary-foreground px-7 py-3 rounded-lg font-bold text-[.9rem] transition-colors hover:bg-green-700">
+              <a
+                href="https://wa.me/?text=Hi%20Maple%20Diary%20Academy!%20I%20just%20booked%20a%20free%20demo."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 bg-green-600 text-primary-foreground px-7 py-3 rounded-lg font-bold text-[.9rem] transition-colors hover:bg-green-700"
+              >
                 💬 Message Us on WhatsApp
               </a>
             </div>
