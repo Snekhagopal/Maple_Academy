@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const COURSES = [
   "Keyboard",
@@ -32,6 +33,7 @@ interface DemoModalProps {
 const DemoModal = ({ open, onClose }: DemoModalProps) => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const [form, setForm] = useState({
     name: "",
@@ -49,6 +51,7 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
 
   const validate = () => {
     const errs: Record<string, string> = {};
+    if (!form.name.trim()) errs.name = "Name is required";
     if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
       errs.email = "Valid email is required";
     if (!form.gender) errs.gender = "Please select gender";
@@ -64,25 +67,42 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
     if (!validate()) return;
 
     setLoading(true);
+    setSubmitError("");
 
-    const subject = encodeURIComponent(`Free Demo Request - ${form.course}`);
-    const body = encodeURIComponent(
-      `New Free Demo Booking:\n\nEmail: ${form.email}\nGender: ${form.gender}\nCountry: ${form.country}\nParent Name: ${form.parentName}\nAttended Before: ${form.attendedBefore}\nCourse: ${form.course}`,
-    );
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          gender: form.gender,
+          age: form.age,
+          country: form.country,
+          parent_name: form.parentName,
+          phone: form.phone,
+          attended_before: form.attendedBefore,
+          course: form.course,
+        },
+            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+      );
 
-    window.open(
-      `mailto:saicharan652@gmail.com?subject=${subject}&body=${body}`,
-      "_blank",
-    );
-
-    setLoading(false);
-    setSuccess(true);
+      setSuccess(true);
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setSubmitError(
+        "Something went wrong. Please try again or contact us directly.",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleClose = () => {
     onClose();
     setTimeout(() => {
       setSuccess(false);
+      setSubmitError("");
       setForm({
         name: "",
         email: "",
@@ -133,7 +153,8 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
                 Fill in your details below. We&apos;ll WhatsApp you within 24
                 hours to confirm your free trial class!
               </p>
-              {/* Name & Age */}
+
+              {/* Name & Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-4">
                 <div>
                   <label className={labelClass}>Name *</label>
@@ -168,7 +189,8 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
                   )}
                 </div>
               </div>
-              {/* Age & Gender */}
+
+              {/* Gender & Age */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-4">
                 <div>
                   <label className={labelClass}>Gender *</label>
@@ -190,7 +212,6 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
                     </span>
                   )}
                 </div>
-
                 <div>
                   <label className={labelClass}>Age *</label>
                   <input
@@ -200,14 +221,10 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
                     placeholder="Enter your age"
                     className={inputClass}
                   />
-                  {errors.age && (
-                    <span className="text-primary text-[.75rem] mt-1 block">
-                      {errors.age}
-                    </span>
-                  )}
                 </div>
               </div>
-              {/* parent name & country */}
+
+              {/* Parent Name & Country */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-4">
                 <div>
                   <label className={labelClass}>Parent Name *</label>
@@ -250,7 +267,7 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
                 </div>
               </div>
 
-              {/* phone */}
+              {/* Phone */}
               <div className="mb-4">
                 <label className={labelClass}>Phone Number *</label>
                 <input
@@ -260,12 +277,9 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
                   placeholder="Enter your phone number"
                   className={inputClass}
                 />
-                {errors.phone && (
-                  <span className="text-primary text-[.75rem] mt-1 block">
-                    {errors.phone}
-                  </span>
-                )}
               </div>
+
+              {/* Attended Before */}
               <div className="mb-4">
                 <label className={labelClass}>
                   Has student attended any class before? *
@@ -287,6 +301,8 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
                   </span>
                 )}
               </div>
+
+              {/* Course */}
               <div className="mb-4">
                 <label className={labelClass}>Select a Course *</label>
                 <select
@@ -308,12 +324,19 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
                 )}
               </div>
 
+              {/* Global error */}
+              {submitError && (
+                <p className="text-primary text-[.82rem] mb-3 text-center">
+                  {submitError}
+                </p>
+              )}
+
               <button
                 onClick={handleSubmit}
                 disabled={loading}
                 className="w-full bg-primary text-primary-foreground py-3.5 rounded-lg text-[.98rem] font-bold tracking-[.04em] cursor-pointer flex items-center justify-center gap-2.5 transition-all shadow-[0_4px_20px_hsl(var(--red-glow)/0.2)] hover:brightness-90 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:translate-y-0 mt-1"
               >
-                {loading ? "Submitting..." : "📋 Register for Free Demo"}
+                {loading ? "Sending..." : "📋 Register for Free Demo"}
               </button>
 
               <div className="flex items-center justify-center gap-1.5 mt-3.5 text-[.77rem] text-muted-foreground">

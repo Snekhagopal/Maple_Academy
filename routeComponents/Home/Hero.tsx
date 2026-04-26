@@ -11,11 +11,11 @@ const Hero = ({ onOpenDemo }: HeroProps) => {
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background image - full display */}
       <div className="absolute inset-0">
-        <Image src={heroBg} alt="" className="w-full h-full object-cover object-center bg-[#080A0F]" />
+        <Image src={heroBg} alt="" className="w-full h-full object-contain object-center bg-[#080A0F]" />
       </div>
       {/* Dark overlay with less transparency */}
-      <div className="absolute inset-0 bg-linear-to-r from-[#080A0F]/90 via-[#080A0F]/75 to-[#080A0F]/50" />
-      <div className="absolute inset-0 bg-linear-to-t from-[#080A0F] via-transparent to-[#080A0F]/40" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#080A0F]/80 via-[#080A0F]/65 to-[#080A0F]/40" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#080A0F] via-transparent to-[#080A0F]/30" />
       {/* Subtle color tint */}
       <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 60% 70% at 20% 50%, rgba(200,16,46,0.12) 0%, transparent 55%), radial-gradient(ellipse 40% 50% at 10% 80%, rgba(201,168,76,0.07) 0%, transparent 50%)" }} />
 
