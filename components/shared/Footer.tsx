@@ -42,7 +42,7 @@ const Footer = ({ onOpenDemo }: FooterProps) => (
             {
               icon: youtube,
               title: "youtube",
-              href: "https://wa.me/9043872168",
+              href: "https://youtube.com/@maplediaryacademy?si=_IxgzIpcpQJxESy6",
             },
           ].map((s) => (
             <a
