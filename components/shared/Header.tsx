@@ -96,7 +96,7 @@ const Header = ({onOpenDemo}:NavbarProps) => {
             }}
             className="mt-3 text-primary font-bold text-left bg-transparent border-none cursor-pointer"
           >
-            📋 Book Free Demo →
+            Book Free Demo →
           </button>
         </div>
       )}

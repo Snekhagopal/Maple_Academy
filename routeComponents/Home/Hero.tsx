@@ -8,11 +8,22 @@ interface HeroProps {
 
 const Hero = ({ onOpenDemo }: HeroProps) => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background image - full display */}
-      <div className="absolute inset-0">
-        <Image src={heroBg} alt="" className="w-full h-full object-contain object-center bg-[#080A0F]" />
-      </div>
+    <section id="hero" 
+    className="relative min-h-screen flex items-center overflow-hidden "
+    // className="relative h-[110vh] flex items-start overflow-hidden"
+    >
+      
+        <div className="absolute inset-0">
+          <Image
+            src={heroBg}
+            alt="Hero"
+            fill
+            priority
+            className="object-cover translate-y-[9%]
+            h-full w-full"
+          />
+        </div>
+      
       {/* Dark overlay with less transparency */}
       <div className="absolute inset-0 bg-linear-to-r from-[#080A0F]/80 via-[#080A0F]/65 to-[#080A0F]/40" />
       <div className="absolute inset-0 bg-linear-to-t from-[#080A0F] via-transparent to-[#080A0F]/30" />
