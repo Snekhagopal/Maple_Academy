@@ -574,7 +574,7 @@ const Courses = ({ onOpenDemo }: CoursesProps) => {
                         onClick={onOpenDemo}
                         className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg text-[.9rem] font-bold transition-all hover:brightness-90 shadow-lg shadow-primary/20 cursor-pointer"
                       >
-                        🎵 Book Free Demo
+                        Book Free Demo
                       </button>
                     </div>
 
