@@ -61,7 +61,7 @@ const Hero = ({ onOpenDemo }: HeroProps) => {
             onClick={onOpenDemo}
             className="bg-[#C8102E] text-white px-8 py-4 rounded-[7px] font-bold text-[.95rem] inline-flex items-center gap-2 transition-all duration-200 hover:-translate-y-0.5 shadow-[0_0_28px_rgba(200,16,46,0.28)] hover:shadow-[0_8px_36px_rgba(200,16,46,0.35)] hover:bg-[#9e0c24] cursor-pointer border-none"
           >
-            🎵 Book Free Demo
+            Book Free Demo
           </button>
           <a
             href="#courses"
