@@ -29,7 +29,7 @@ const WhyUs = ({ onOpenDemo }: WhyUsProps) => (
           onClick={onOpenDemo}
           className="bg-primary text-primary-foreground px-8 py-3.5 rounded-md font-bold text-[.95rem] inline-flex items-center gap-2 transition-all hover:-translate-y-0.5 shadow-[0_4px_20px_hsl(var(--red-glow)/0.25)]"
         >
-          🎵 Start for Free Today
+          Start for Free Today
         </button>
       </motion.div>
 
