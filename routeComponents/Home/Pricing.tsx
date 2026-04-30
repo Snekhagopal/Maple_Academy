@@ -158,7 +158,8 @@ const Pricing = ({ onOpenDemo }: PricingProps) => {
                       : "bg-transparent text-primary border border-primary/25 hover:bg-primary/10 hover:border-primary"
                   }`}
                 >
-                  {course.icon} Book Free Demo
+                  {/* {course.icon} */}
+                   Book Free Demo
                 </button>
               </motion.div>
             ))}

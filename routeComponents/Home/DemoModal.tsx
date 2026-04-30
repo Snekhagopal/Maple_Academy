@@ -364,7 +364,7 @@ const DemoModal = ({ open, onClose }: DemoModalProps) => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 bg-green-600 text-primary-foreground px-7 py-3 rounded-lg font-bold text-[.9rem] transition-colors hover:bg-green-700"
               >
-                💬 Message Us on WhatsApp
+                Message Us on WhatsApp
               </a>
             </div>
           )}
