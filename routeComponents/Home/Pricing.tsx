@@ -5,15 +5,15 @@ const PRICING: Record<
   string,
   { sym: string; code: string; name: string; price: number }
 > = {
-  IN: { sym: "₹", code: "INR", name: "India", price: 500 },
-  US: { sym: "$", code: "USD", name: "United States", price: 10.5 },
-  UK: { sym: "£", code: "GBP", name: "United Kingdom", price: 8.5 },
-  AU: { sym: "A$", code: "AUD", name: "Australia", price: 15.5 },
-  AE: { sym: "AED", code: "AED", name: "UAE", price: 38 },
-  SG: { sym: "S$", code: "SGD", name: "Singapore", price: 14 },
-  CA: { sym: "C$", code: "CAD", name: "Canada", price: 15 },
-  MY: { sym: "RM", code: "MYR", name: "Malaysia", price: 43 },
-  EU: { sym: "€", code: "EUR", name: "Europe", price: 9.5 },
+  IN: { sym: "₹", code: "INR", name: "India", price: 600 },
+  US: { sym: "$", code: "USD", name: "United States", price: 11.5 },
+  UK: { sym: "£", code: "GBP", name: "United Kingdom", price: 9.5 },
+  AU: { sym: "A$", code: "AUD", name: "Australia", price: 16.5 },
+  AE: { sym: "AED", code: "AED", name: "UAE", price: 39 },
+  SG: { sym: "S$", code: "SGD", name: "Singapore", price: 15 },
+  CA: { sym: "C$", code: "CAD", name: "Canada", price: 16},
+  MY: { sym: "RM", code: "MYR", name: "Malaysia", price: 44 },
+  EU: { sym: "€", code: "EUR", name: "Europe", price: 10.5 },
 };
 
 const REGIONS = [
