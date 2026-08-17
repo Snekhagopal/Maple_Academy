@@ -144,7 +144,7 @@ const Footer = ({ onOpenDemo }: FooterProps) => (
               onClick={onOpenDemo}
               className="text-[.84rem] text-secondary-foreground/50 hover:text-secondary-foreground transition-colors bg-transparent border-none cursor-pointer p-0"
             >
-              📋 Book Demo
+              Book Demo
             </button>
           </li>
         </ul>
@@ -152,7 +152,7 @@ const Footer = ({ onOpenDemo }: FooterProps) => (
     </div>
     <div className="border-t border-secondary-foreground/10 pt-5 flex justify-between items-center flex-wrap gap-2.5">
       <p className="text-secondary-foreground/30 text-[.77rem]">
-        © 2025 Maple Diary Academy. All rights reserved.
+        © 2026 Maple Diary Academy. All rights reserved.
       </p>
       <div className="flex gap-4">
         <a
