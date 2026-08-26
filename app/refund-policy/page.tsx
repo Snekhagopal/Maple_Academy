@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
+
+export const metadata: Metadata = {
+  title: "Refund Policy",
+  description:
+    "Maple Diary Academy Refund Policy — learn about our refund and cancellation terms for online music class enrolments.",
+  robots: { index: false, follow: false },
+  alternates: { canonical: "https://www.maplediaryacademy.com/refund-policy" },
+};
 
 const RefundPolicy = () => (
   <div className="min-h-screen bg-background">

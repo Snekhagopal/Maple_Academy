@@ -31,11 +31,12 @@ const Header = ({onOpenDemo}:NavbarProps) => {
   return (
     <>
       <nav
+        aria-label="Main navigation"
         className={`fixed top-0 left-0 right-0 z-500 flex items-center justify-between px-[5%] h-17.5 backdrop-blur-[18px] border-b border-border transition-shadow duration-300 bg-background/95 ${
           scrolled ? "shadow-md" : ""
         }`}
       >
-        <a href="#" className="flex items-center gap-3">
+        <a href="/" aria-label="Maple Diary Academy — Home" className="flex items-center gap-3">
           <Image src={logo} alt="Maple Diary Academy" className="w-10 h-10 rounded-full object-cover border border-border" />
           <div className="leading-tight">
             <strong className="block font-heading text-[1.05rem] font-black text-foreground">
@@ -69,7 +70,8 @@ const Header = ({onOpenDemo}:NavbarProps) => {
         <button
           className="lg:hidden flex flex-col gap-[5px] bg-transparent border-none p-1.5 cursor-pointer"
           onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Menu"
+          aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={mobileOpen}
         >
           <span className="block w-6 h-0.5 bg-foreground rounded-sm" />
           <span className="block w-6 h-0.5 bg-foreground rounded-sm" />

@@ -10,7 +10,7 @@ interface FooterProps {
 }
 
 const Footer = ({ onOpenDemo }: FooterProps) => (
-  <footer className="bg-secondary py-16 px-[5%]">
+  <footer aria-label="Site footer" className="bg-secondary py-16 px-[5%]">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-11">
       <div>
         <div className="flex items-center gap-2.5 mb-3">
@@ -50,6 +50,7 @@ const Footer = ({ onOpenDemo }: FooterProps) => (
               href={s.href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`Follow Maple Diary Academy on ${s.title}`}
               title={s.title}
               className="w-8.5 h-8.5 rounded-lg bg-secondary-foreground/10 border border-secondary-foreground/10 flex items-center justify-center text-secondary-foreground/60 transition-all hover:border-primary hover:bg-primary/20 hover:text-primary"
             >

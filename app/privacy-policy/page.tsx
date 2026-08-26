@@ -1,4 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Read the Maple Diary Academy Privacy Policy — how we collect, use, and protect your personal information when you use our online music class services.",
+  robots: { index: false, follow: false },
+  alternates: { canonical: "https://www.maplediaryacademy.com/privacy-policy" },
+};
 
 const PrivacyPolicy = () => (
   <div className="min-h-screen bg-background">

@@ -35,6 +35,14 @@ const About = () => (
           <p className="text-muted-foreground text-[.95rem] leading-[1.85] font-light mt-4">
             We combine traditional music training with modern teaching methods, ensuring students not only learn to play an instrument but truly understand and enjoy music. Through personalized mentoring, regular assessments, and guided practice systems, we help every student progress at their own pace while achieving measurable results.
           </p>
+          <p className="text-muted-foreground text-[.95rem] leading-[1.85] font-light mt-4">
+            Today, Maple Diary Academy proudly serves <strong className="text-foreground">500+ students</strong> across{" "}
+            <strong className="text-foreground">10+ countries</strong> — including India, UAE, USA, UK, Australia, Singapore, Canada and Malaysia.
+            Our students have successfully cleared <strong className="text-foreground">Trinity College London</strong> and{" "}
+            <strong className="text-foreground">RSL Awards (Rock School)</strong> international grade examinations.
+            We teach Keyboard, Piano, Acoustic Guitar, Electric Guitar, Western Vocals, Carnatic Vocals, Music Theory and Vocal Training
+            — all delivered as live, interactive one-on-one sessions via Zoom or Google Meet.
+          </p>
         </div>
       </motion.div>
     </div>

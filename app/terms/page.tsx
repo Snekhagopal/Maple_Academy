@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions",
+  description:
+    "Terms and Conditions for Maple Diary Academy — understand our policies on enrolment, payments, cancellations, and use of our online music class services.",
+  robots: { index: false, follow: false },
+  alternates: { canonical: "https://www.maplediaryacademy.com/terms" },
+};
 
 const Terms = () => (
   <div className="min-h-screen bg-background">

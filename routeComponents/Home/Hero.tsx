@@ -8,9 +8,10 @@ interface HeroProps {
 
 const Hero = ({ onOpenDemo }: HeroProps) => {
   return (
-    <section id="hero" 
-    className="relative min-h-screen flex items-center overflow-hidden "
-    // className="relative h-[110vh] flex items-start overflow-hidden"
+    <section
+      id="hero"
+      aria-label="Welcome to Maple Diary Academy"
+      className="relative min-h-screen flex items-center overflow-hidden "
     >
       
         <div className="absolute inset-0">
@@ -81,6 +82,13 @@ const Hero = ({ onOpenDemo }: HeroProps) => {
             Explore Courses →
           </a>
         </motion.div>
+
+        {/* Visually hidden geo/location signals for search engines and LLMs */}
+        <span className="sr-only">
+          Online music classes for students in India, UAE, USA, UK, Australia, Singapore, Canada, Malaysia —
+          including Chennai, Bangalore, Mumbai, Delhi, Hyderabad, Pune, Kochi, Dubai, Abu Dhabi, London, New York, Sydney.
+          Live one-on-one keyboard, piano, guitar and vocal lessons for kids and adults.
+        </span>
       </div>
     </section>
   );

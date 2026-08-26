@@ -43,7 +43,7 @@ const exams = [
 
 const GradedExams = () => {
   return (
-    <section className="py-20 px-[5%] bg-background">
+    <section id="graded-exams" aria-label="Graded Music Exam Partners" className="py-20 px-[5%] bg-background">
       <motion.div
         initial={{ opacity: 0, y: 26 }}
         whileInView={{ opacity: 1, y: 0 }}

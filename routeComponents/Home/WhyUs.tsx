@@ -23,7 +23,10 @@ const WhyUs = ({ onOpenDemo }: WhyUsProps) => (
           Music learning<br /><span className="text-primary">reimagined</span> for you
         </h2>
         <p className="text-muted-foreground text-[.95rem] leading-[1.75] font-light max-w-[560px] mb-8">
-          We believe great music education should be accessible, personal and joyful — wherever you are in the world.
+          We believe great music education should be accessible, personal and joyful — wherever you are in the world.{" "}
+          <span className="text-foreground/80">
+            Currently serving students across <strong>India, UAE, USA, UK, Australia, Singapore, Canada and Malaysia</strong> with live one-on-one sessions in Keyboard, Piano, Guitar and Vocals.
+          </span>
         </p>
         <button
           onClick={onOpenDemo}
