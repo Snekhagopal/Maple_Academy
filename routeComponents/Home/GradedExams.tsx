@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.jpg";
 import bridgeLogo from "@/assets/bridge-academy.svg";
+import rslLogo from "@/assets/RSL-Logo.png";
+import trinityLogo from "@/assets/trinity-logo.png";
 import Image from "next/image";
 
 const exams = [
@@ -9,17 +11,17 @@ const exams = [
     name: "Rock School",
     location: "UK",
     bg: "bg-gradient-to-r from-[#0077B6] to-[#00B4D8]",
-    label: "RSL",
-    labelStyle: "text-white font-display text-3xl tracking-wider",
+    logo: rslLogo,
     path: "https://www.rslawards.com/ ",
+    isLogo: true,
   },
   {
     name: "Trinity College",
     location: "UK",
     bg: "bg-gradient-to-r from-[#6A0DAD] to-[#9B59B6]",
-    label: "TRINITY",
-    labelStyle: "text-white font-display text-2xl tracking-[.15em]",
+    logo: trinityLogo,
     path: "https://www.trinitycollege.com/",
+    isLogo: true,
   },
   {
     name: "Maple Diary Academy",
@@ -78,14 +80,12 @@ const GradedExams = () => {
                 </p>
               )}
             </div>
-            {exam.isLogo && exam.logo ? (
+            {exam.isLogo && exam.logo && (
               <Image
                 src={exam.logo}
                 alt={exam.name}
-                className="w-14 h-14 rounded-full object-cover border-2 border-white/20 shrink-0"
+                className="w-14 h-14 rounded-full object-contain p-1 border-2 border-white/20 shrink-0"
               />
-            ) : (
-              <span className={exam.labelStyle}>{exam.label}</span>
             )}
           </motion.a>
         ))}
