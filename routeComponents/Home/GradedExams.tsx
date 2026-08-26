@@ -6,6 +6,7 @@ import rslLogo from "@/assets/RSL-Logo.png";
 import trinityLogo from "@/assets/trinity-logo.png";
 import Image from "next/image";
 
+
 const exams = [
   {
     name: "Rock School",
