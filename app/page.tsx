@@ -9,7 +9,7 @@ const organizationSchema = {
   "@type": ["Organization", "EducationalOrganization"],
   "@id": `${SITE_URL}/#organization`,
   name: "Maple Diary Academy",
-  alternateName: "Maple Academy",
+  alternateName: "Maple Diary Academy",
   url: SITE_URL,
   logo: {
     "@type": "ImageObject",

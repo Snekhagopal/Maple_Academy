@@ -3,7 +3,7 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Maple Diary Academy",
-    short_name: "Maple Academy",
+    short_name: "Maple Diary Academy",
     description:
       "Live online music classes — Keyboard, Piano, Guitar & Vocals. Expert teachers, all ages, first class FREE.",
     start_url: "/",
